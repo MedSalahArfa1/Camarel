@@ -295,13 +295,14 @@ h6 {
   position: absolute;
   top: 55px;
   right: 15px;
-  bottom: 15px;
+  bottom: 55px;
   left: 15px;
   padding: 10px 0;
   border-radius: 8px;
   background-color: #fff;
   overflow-y: auto;
   transition: 0.3s;
+  max-height: 27%;
 }
 
 .navbar-mobile a,
