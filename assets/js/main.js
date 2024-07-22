@@ -238,23 +238,19 @@
   const galleryLightbox = GLightbox({
     selector: '.gallery-lightbox'
   });
+})()
 
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+$(document).ready(function() {
+  // Smooth scrolling when a link is clicked
+  $('a').on('click', function(event) {
+    if (this.hash !== '') {
+      event.preventDefault();
+      let hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function() {
+        window.location.hash = hash;
+      });
     }
   });
-
-})()
+});
